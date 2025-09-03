@@ -14,7 +14,7 @@ const upcomingEvents = [
 		description: "Come learn about Convergent, our mission, and how to get involved.",
 		date: "2025-09-02",
 		time: "6:00 PM",
-		location: "GSB 2.216",
+		location: "GDC 2.216",
 		type: "Info Session",
 		attendees: 120,
 		maxAttendees: 150,
@@ -47,7 +47,7 @@ const upcomingEvents = [
 		description: "Another chance to hear about Convergent’s opportunities and programs.",
 		date: "2025-09-04",
 		time: "6:00 PM",
-		location: "GSB room #",
+		location: "GDC room #",
 		type: "Info Session",
 		attendees: 100,
 		maxAttendees: 150,
@@ -115,16 +115,16 @@ const exportToICal = (event: (typeof upcomingEvents)[0]) => {
 	const formatDate = (d: Date) => d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
 
 	const icsContent = `
-BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${event.title}
-DTSTART:${formatDate(startDate)}
-DTEND:${formatDate(endDate)}
-DESCRIPTION:${event.description}
-LOCATION:${event.location}
-END:VEVENT
-END:VCALENDAR
+		BEGIN:VCALENDAR
+		VERSION:2.0
+		BEGIN:VEVENT
+		SUMMARY:${event.title}
+		DTSTART:${formatDate(startDate)}
+		DTEND:${formatDate(endDate)}
+		DESCRIPTION:${event.description}
+		LOCATION:${event.location}
+		END:VEVENT
+		END:VCALENDAR
   `.trim();
 
 	const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
@@ -249,7 +249,7 @@ export function EventsCalendar() {
 									</Badge>
 									<Button variant="outline" size="sm" onClick={() => exportToICal(selectedEvent)} className="flex items-center gap-2">
 										<Download className="h-4 w-4" />
-										Export to GCal
+										Export to Cal
 									</Button>
 								</div>
 
