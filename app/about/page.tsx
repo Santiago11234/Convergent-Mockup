@@ -78,7 +78,7 @@ export default function AboutPage() {
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 border ${
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 border cursor-pointer ${
                     activeSection === section.id
                       ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
                       : "bg-card hover:bg-card/80 text-muted-foreground hover:text-foreground"
